@@ -1,0 +1,292 @@
+.philosophy {
+  background: #f9f7f3;
+}
+
+.philosophy__container {
+  width: min(100%, 1440px);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 100px 72px 110px;
+  box-sizing: border-box;
+}
+
+/* ── Top two-column block ───────────────────────────────────── */
+
+.philosophy__top {
+  display: grid;
+  grid-template-columns: 54fr 42fr;
+  column-gap: 4%;
+  align-items: start;
+}
+
+.philosophy__left {
+  min-width: 0;
+}
+
+.philosophy__eyebrow,
+.philosophy__services-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.philosophy__eyebrow-text {
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #111111;
+  white-space: nowrap;
+}
+
+.philosophy__eyebrow-dash {
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(17, 17, 17, 0.45);
+  line-height: 1;
+}
+
+.philosophy__eyebrow-rule {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.35);
+}
+
+.philosophy__headline {
+  display: flex;
+  flex-direction: column;
+  max-width: 520px;
+  margin: 28px 0 0;
+  font-family: "Libre Caslon Text", "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(48px, 4.2vw, 60px);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: #111111;
+}
+
+.philosophy__headline-line {
+  display: block;
+}
+
+.philosophy__right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 100%;
+  min-width: 0;
+  align-self: stretch;
+  padding-top: 52px;
+}
+
+.philosophy__visual {
+  width: 100%;
+  height: clamp(380px, 38vw, 520px);
+  overflow: hidden;
+  box-shadow: 0 24px 56px rgba(17, 17, 17, 0.08);
+}
+
+.philosophy__visual-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Divider ────────────────────────────────────────────────── */
+
+.philosophy__divider {
+  width: 100%;
+  height: 1px;
+  margin: 52px 0 44px;
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* ── What We Do grid ────────────────────────────────────────── */
+
+.philosophy__services-eyebrow {
+  margin-bottom: 40px;
+}
+
+.philosophy__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 0;
+}
+
+.philosophy__service {
+  --service-pad-x: clamp(28px, 3vw, 44px);
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  padding: 0 var(--service-pad-x);
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.philosophy__service:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.philosophy__service-media {
+  width: calc(100% + (2 * var(--service-pad-x)));
+  height: clamp(180px, 16vw, 220px);
+  margin-right: calc(-1 * var(--service-pad-x));
+  margin-bottom: 24px;
+  margin-left: calc(-1 * var(--service-pad-x));
+  overflow: hidden;
+}
+
+.philosophy__service:first-child .philosophy__service-media {
+  width: calc(100% + var(--service-pad-x));
+  margin-left: 0;
+}
+
+.philosophy__service-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.philosophy__service-num {
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(17, 17, 17, 0.42);
+}
+
+.philosophy__service-title {
+  margin: 18px 0 0;
+  font-family: "Libre Caslon Text", "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(34px, 2.6vw, 40px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #111111;
+}
+
+.philosophy__service-text {
+  margin: 18px 0 0;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #555555;
+}
+
+.philosophy__service-arrow {
+  display: inline-block;
+  margin-top: auto;
+  padding-top: 28px;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1;
+  color: #111111;
+  transition: transform 0.3s ease;
+}
+
+.philosophy__service:hover .philosophy__service-arrow {
+  transform: translateX(6px);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 1100px) {
+  .philosophy__top {
+    grid-template-columns: 1fr;
+    row-gap: 48px;
+  }
+
+  .philosophy__right {
+    padding-top: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .philosophy__visual {
+    height: clamp(280px, 42vw, 360px);
+  }
+
+  .philosophy__headline {
+    max-width: 100%;
+  }
+
+  .philosophy__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 40px;
+  }
+
+  .philosophy__service:nth-child(odd) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .philosophy__service:nth-child(even) {
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .philosophy__service:nth-child(odd) .philosophy__service-media {
+    width: calc(100% + var(--service-pad-x));
+    margin-left: 0;
+  }
+
+  .philosophy__service:nth-child(even) .philosophy__service-media {
+    width: calc(100% + (2 * var(--service-pad-x)));
+    margin-left: calc(-1 * var(--service-pad-x));
+  }
+
+  .philosophy__service:nth-child(3) {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .philosophy__container {
+    padding: 72px 24px 80px;
+  }
+
+  .philosophy__headline {
+    font-size: clamp(40px, 10vw, 48px);
+  }
+
+  .philosophy__visual {
+    height: clamp(260px, 55vw, 340px);
+    box-shadow: 0 16px 40px rgba(17, 17, 17, 0.07);
+  }
+
+  .philosophy__grid {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+  }
+
+  .philosophy__service {
+    min-height: 0;
+    padding: 0 0 32px;
+    margin-bottom: 32px;
+    border-left: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .philosophy__service-media {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    height: clamp(200px, 52vw, 280px);
+  }
+
+  .philosophy__service:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}

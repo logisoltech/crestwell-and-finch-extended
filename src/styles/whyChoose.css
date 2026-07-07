@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Libre+Caslon+Text:wght@400&display=swap");
+
+.why {
+  width: 100%;
+  background: #f7f5f1;
+}
+
+.why__container {
+  width: min(100%, 1440px);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 100px 80px;
+  box-sizing: border-box;
+}
+
+/* ── Eyebrow ────────────────────────────────────────────────── */
+
+.why__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.why__eyebrow-text {
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #111111;
+  white-space: nowrap;
+}
+
+.why__eyebrow-rule {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.35);
+}
+
+.why__eyebrow-dash {
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(17, 17, 17, 0.45);
+}
+
+/* ── Block 1 — Why Clients Choose Us ────────────────────────── */
+
+.why__features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: clamp(40px, 5vw, 72px);
+  margin-top: 48px;
+}
+
+.why__feature {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.why__feature-visual {
+  position: relative;
+  height: clamp(220px, 22vw, 280px);
+  overflow: hidden;
+}
+
+.why__feature-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(20%) brightness(0.82) contrast(1.05);
+  transition: transform 0.45s ease;
+}
+
+.why__feature-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.28) 42%,
+    transparent 72%
+  );
+}
+
+.why__feature-caption {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px;
+}
+
+.why__feature-title {
+  margin: 0;
+  font-family: "Libre Caslon Text", "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(32px, 2.8vw, 40px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #f5f3ef;
+  transition: transform 0.35s ease;
+}
+
+.why__feature-arrow {
+  flex-shrink: 0;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.92);
+  transition: transform 0.35s ease;
+}
+
+.why__feature-text {
+  margin: 20px 0 0;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #4b4b4b;
+  opacity: 0.82;
+  transition: opacity 0.35s ease;
+}
+
+.why__feature:hover .why__feature-image {
+  transform: scale(1.04);
+}
+
+.why__feature:hover .why__feature-title {
+  transform: translateY(-4px);
+}
+
+.why__feature:hover .why__feature-text {
+  opacity: 1;
+}
+
+.why__feature:hover .why__feature-arrow {
+  transform: translateX(6px);
+}
+
+/* ── Divider ──────────────────────────────────────────────────── */
+
+.why__divider {
+  width: 100%;
+  height: 1px;
+  margin: 80px 0;
+  border: none;
+  background: #dddddd;
+}
+
+/* ── Block 2 — Our People ───────────────────────────────────── */
+
+.why__people-grid {
+  display: grid;
+  grid-template-columns: 270px repeat(3, minmax(0, 1fr));
+  column-gap: 72px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.why__people-intro {
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  min-width: 270px;
+  max-width: 270px;
+}
+
+.why__people-headline {
+  width: 270px;
+  max-width: 270px;
+  margin: 22px 0 0;
+  font-family: "Libre Caslon Text", "Cormorant Garamond", Georgia, serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #111111;
+}
+
+.why__people-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: auto;
+  padding-top: 36px;
+  color: #111111;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.why__people-link-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.why__people-link-text {
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.why__people-link-arrow {
+  display: inline-block;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 0.35s ease;
+}
+
+.why__people-link-line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 6px;
+  background: #111111;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s ease;
+}
+
+.why__people-link:hover .why__people-link-arrow {
+  transform: translateX(8px);
+}
+
+.why__people-link:hover .why__people-link-line {
+  transform: scaleX(1);
+}
+
+/* ── Attorneys ──────────────────────────────────────────────── */
+
+.why__attorney {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s ease;
+}
+
+.why__attorney-visual {
+  position: relative;
+  height: clamp(320px, 30vw, 420px);
+  overflow: hidden;
+}
+
+.why__attorney-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(25%) brightness(0.78) contrast(1.06);
+  transition: transform 0.45s ease;
+}
+
+.why__attorney-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.35) 38%,
+    transparent 68%
+  );
+}
+
+.why__attorney-caption {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px;
+}
+
+.why__attorney-caption-text {
+  min-width: 0;
+}
+
+.why__attorney-name {
+  margin: 0 0 6px;
+  max-width: 100%;
+  font-family: "Libre Caslon Text", "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(28px, 2.4vw, 36px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: #f5f3ef;
+  transition: transform 0.35s ease;
+}
+
+.why__attorney-role {
+  margin: 0;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.why__attorney-arrow {
+  flex-shrink: 0;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.92);
+  transition: transform 0.35s ease;
+}
+
+.why__attorney-areas {
+  margin: 18px 0 0;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #111111;
+}
+
+.why__attorney-desc {
+  margin: 12px 0 0;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #555555;
+}
+
+.why__attorney:hover {
+  transform: translateY(-8px);
+}
+
+.why__attorney:hover .why__attorney-image {
+  transform: scale(1.04);
+}
+
+.why__attorney:hover .why__attorney-name {
+  transform: translateX(6px);
+}
+
+.why__attorney:hover .why__attorney-arrow {
+  transform: translateX(6px);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 1280px) {
+  .why__people-grid {
+    grid-template-columns: 270px repeat(3, minmax(0, 1fr));
+    column-gap: 56px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .why__container {
+    padding: 96px 48px;
+  }
+
+  .why__features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 48px;
+  }
+
+  .why__feature:last-child {
+    grid-column: 1 / -1;
+    max-width: 480px;
+  }
+
+  .why__divider {
+    margin: 80px 0;
+  }
+
+  .why__people-grid {
+    grid-template-columns: 1fr;
+    row-gap: 48px;
+    align-items: start;
+  }
+
+  .why__people-intro {
+    width: 100%;
+    min-width: 0;
+    max-width: 270px;
+  }
+
+  .why__people-headline {
+    width: 270px;
+    max-width: 270px;
+    font-size: 44px;
+  }
+
+  .why__people-link {
+    margin-top: 36px;
+    padding-top: 0;
+  }
+
+  .why__attorney {
+    height: auto;
+  }
+
+  .why__attorney-visual {
+    height: clamp(300px, 42vw, 380px);
+  }
+
+  .why__attorney-name {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 640px) {
+  .why__container {
+    padding: 72px 24px;
+  }
+
+  .why__features {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+    margin-top: 36px;
+  }
+
+  .why__feature:last-child {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .why__divider {
+    margin: 64px 0;
+  }
+
+  .why__people-grid {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+
+  .why__people-intro {
+    max-width: 100%;
+  }
+
+  .why__people-headline {
+    width: 100%;
+    max-width: 270px;
+    font-size: 40px;
+  }
+
+  .why__attorney-visual {
+    height: clamp(280px, 70vw, 360px);
+  }
+
+  .why__attorney {
+    max-width: 100%;
+  }
+}

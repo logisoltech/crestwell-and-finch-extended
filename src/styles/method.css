@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&family=Libre+Caslon+Text:wght@400&display=swap");
+
+.method {
+  width: 100%;
+  background: #0a0a0a;
+}
+
+.method__inner {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* ── Left sticky panel ──────────────────────────────────────── */
+
+.method__left {
+  position: sticky;
+  top: 0;
+  flex: 0 0 32%;
+  width: 32%;
+  height: 100vh;
+  align-self: flex-start;
+  background: #050505;
+  overflow: hidden;
+}
+
+.method__left-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.method__left-bg-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.method__left-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.method__left-texture {
+  position: absolute;
+  inset: -50%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+.method__left-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 80px;
+  box-sizing: border-box;
+}
+
+.method__left-rule {
+  display: block;
+  width: 40px;
+  height: 1px;
+  margin-bottom: 32px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.method__heading {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.14em;
+  color: #f5f3ef;
+  text-transform: uppercase;
+}
+
+.method__heading-line {
+  display: block;
+}
+
+.method__description {
+  max-width: 280px;
+  margin: 28px 0 0;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ── Right list ───────────────────────────────────────────────── */
+
+.method__right {
+  flex: 1;
+  min-width: 0;
+  background: #0a0a0a;
+}
+
+.method-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: default;
+}
+
+.method-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.method-row {
+  min-height: 170px;
+  box-sizing: border-box;
+  transition: background 0.35s ease;
+}
+
+.method-item--light .method-row,
+.method-item--dark .method-row {
+  background: #0a0a0a;
+}
+
+.method-row__inner {
+  display: grid;
+  grid-template-columns: 56px minmax(140px, 20%) 1fr 56px;
+  column-gap: clamp(28px, 3.5vw, 48px);
+  align-items: center;
+  min-height: 170px;
+  padding: 0 clamp(40px, 5vw, 72px);
+  box-sizing: border-box;
+  transform-origin: center center;
+}
+
+.method-item:hover .method-row {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.method-item:hover .method-row__title {
+  transform: translateX(10px);
+}
+
+.method-item--open .method-row {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.method-item--open .method-row__icon {
+  transform: rotate(45deg) scale(1.12);
+}
+
+.method-row__num {
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.95);
+  opacity: 0.85;
+  transition: opacity 0.35s ease;
+}
+
+.method-row__title {
+  margin: 0;
+  font-family: "Libre Caslon Text", "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(36px, 3vw, 44px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #f5f3ef;
+  opacity: 0.95;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.method-row__desc {
+  margin: 0;
+  max-width: 520px;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 0.85;
+  transition: opacity 0.35s ease;
+}
+
+.method-row__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.95);
+  opacity: 0.9;
+  cursor: pointer;
+  transform: rotate(0deg) scale(1);
+  transition: opacity 0.35s ease;
+  transform-origin: center center;
+}
+
+/* ── Expand panel ─────────────────────────────────────────────── */
+
+.method-panel {
+  height: 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.method-panel__inner {
+  padding: 0 clamp(40px, 5vw, 72px) 36px
+    calc(56px + clamp(28px, 3.5vw, 48px) + min(140px, 20vw));
+}
+
+.method-panel__text {
+  max-width: 560px;
+  margin: 28px 0 0;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 1100px) {
+  .method__inner {
+    flex-direction: column;
+  }
+
+  .method__left {
+    position: relative;
+    top: auto;
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .method__left-content {
+    justify-content: flex-start;
+    height: auto;
+    padding: 64px 48px;
+  }
+
+  .method-row__inner {
+    grid-template-columns: 48px 1fr 40px;
+    grid-template-rows: auto auto;
+    row-gap: 12px;
+    min-height: 0;
+    padding: 40px 48px;
+  }
+
+  .method-row {
+    min-height: 0;
+  }
+
+  .method-row__title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .method-row__desc {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    max-width: 100%;
+  }
+
+  .method-row__icon {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .method-panel__inner {
+    padding: 0 48px 32px 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .method__left-content {
+    padding: 48px 24px;
+  }
+
+  .method-row__inner {
+    padding: 32px 24px;
+    grid-template-columns: 40px 1fr 32px;
+  }
+
+  .method-panel__inner {
+    padding: 0 24px 28px 24px;
+  }
+
+  .method__heading {
+    font-size: 28px;
+  }
+}

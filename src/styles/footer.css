@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap");
+
+.footer {
+  width: 100%;
+  background: #f7f5f1;
+  border-top: 1px solid #dddddd;
+}
+
+.footer__container {
+  width: min(100%, 1440px);
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ── Main grid ──────────────────────────────────────────────── */
+
+.footer__main {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.35fr) 1fr 1fr 1fr;
+  column-gap: 56px;
+  padding: 80px 80px 64px;
+}
+
+/* ── Brand column ───────────────────────────────────────────── */
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.footer__logo {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  color: #111111;
+  text-decoration: none;
+}
+
+.footer__logo-line {
+  font-family: "Libre Caslon Text", Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.footer__tagline {
+  margin: 16px 0 0;
+  font-family: "Libre Caslon Text", Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.35;
+  color: #111111;
+}
+
+.footer__locations {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #111111;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  color: #111111;
+  transition: opacity 0.35s ease;
+}
+
+.footer__social-link svg {
+  width: 100%;
+  height: 100%;
+}
+
+.footer__social-link:hover {
+  opacity: 0.55;
+}
+
+/* ── Nav columns ────────────────────────────────────────────── */
+
+.footer__col {
+  min-width: 0;
+}
+
+.footer__col-rule {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.35);
+}
+
+.footer__col-title {
+  margin: 18px 0 0;
+  font-family: "Libre Caslon Text", Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #111111;
+}
+
+.footer__col-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__col-link {
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #111111;
+  text-decoration: none;
+  transition: opacity 0.35s ease;
+}
+
+.footer__col-link:hover {
+  opacity: 0.55;
+}
+
+/* ── Bottom bar ─────────────────────────────────────────────── */
+
+.footer__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 24px 80px 32px;
+  border-top: 1px solid #dddddd;
+}
+
+.footer__bar-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #555555;
+}
+
+.footer__credit {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #777777;
+  text-decoration: none;
+  transition: color 0.35s ease, opacity 0.35s ease;
+}
+
+.footer__credit-text {
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.footer__credit-line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 4px;
+  background: #111111;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  opacity: 0;
+}
+
+.footer__credit:hover {
+  color: #111111;
+}
+
+.footer__credit:hover .footer__credit-line {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer__legal-icon {
+  display: flex;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+}
+
+.footer__legal-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.footer__legal-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.footer__legal-link {
+  font-family: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #111111;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.35s ease;
+}
+
+.footer__legal-link:hover {
+  opacity: 0.55;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 1100px) {
+  .footer__main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 48px;
+    padding: 64px 48px 48px;
+    column-gap: 40px;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer__bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 48px 32px;
+  }
+
+  .footer__legal-links {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__main {
+    grid-template-columns: 1fr;
+    padding: 56px 24px 40px;
+  }
+
+  .footer__bar {
+    padding: 20px 24px 28px;
+  }
+}
